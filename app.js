@@ -2,8 +2,7 @@ const express = require('express');
 const { mean, median, mode } = require('./operations');
 const app = express();
 
-
-const makeIntArray = (queryNums) => queryNums.split(',').map((val) => val = parseInt(val));
+const makeIntArray = (queryNums) => queryNums.split(',').map((val) => val = +val);
 
 app.get('/mean', (req, res) => {
     const nums = makeIntArray(req.query.nums)
